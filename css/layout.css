@@ -1,0 +1,95 @@
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { color-scheme: dark; -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--text);
+  font: 400 var(--fs-md) / 1.5 var(--font-ui);
+  -webkit-font-smoothing: antialiased;
+}
+
+button, input { font: inherit; color: inherit; }
+button { cursor: pointer; }
+h1, h2, p, figure, blockquote, ol { margin: 0; padding: 0; }
+
+:focus-visible { outline: 2px solid var(--gold-hi); outline-offset: 2px; }
+
+.icon { display: block; width: 1em; height: 1em; flex: none; }
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+  opacity: 0.06;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.app {
+  display: grid;
+  grid-template-columns: var(--sidebar-w) minmax(0, 1fr);
+  height: 100dvh;
+}
+
+.sidebar {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  background: var(--bg-sidebar);
+  border-right: 1px solid var(--line-soft);
+}
+
+.stage {
+  position: relative;
+  display: flex;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.stage__inner {
+  position: relative;
+  width: 100%;
+  max-width: 920px;
+  margin: auto;
+  padding: clamp(24px, 4vh, 48px) clamp(20px, 4vw, 56px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-4);
+}
+
+.ambient { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.ambient::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(60% 45% at 50% 18%, rgba(207, 169, 90, 0.1), transparent 70%);
+}
+.ambient__img {
+  position: absolute;
+  inset: -10%;
+  background-size: cover;
+  background-position: center;
+  filter: blur(70px) sepia(0.8) saturate(0.8);
+  opacity: 0;
+  transition: opacity 0.8s var(--ease);
+}
+.ambient__img.is-on { opacity: 0.14; }
+
+

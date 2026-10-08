@@ -1,0 +1,47 @@
+:root {
+  --font-display: "Cormorant Garamond", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --font-ui: "Alegreya Sans", "Gill Sans", "Segoe UI", system-ui, sans-serif;
+
+  --bg: #16100c;
+  --bg-sidebar: #1c1510;
+  --surface: #261c15;
+  --surface-hi: #30241b;
+  --line: #44362a;
+  --line-soft: #33271e;
+
+  --text: #f1e6d0;
+  --text-2: #bcac90;
+  --text-3: #8d7e66;
+
+  --gold: #cfa95a;
+  --gold-hi: #e6c581;
+  --gold-lo: #8c7239;
+  --on-gold: #1a1209;
+  --danger: #e59a8b;
+
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-md: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-xl: 1.5rem;
+  --fs-display: clamp(1.75rem, 1.2rem + 2vw, 2.75rem);
+
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --sp-7: 48px;
+
+  --r-sm: 4px;
+  --r-md: 8px;
+  --r-pill: 999px;
+
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --t-fast: 120ms;
+  --t-med: 220ms;
+  --t-slow: 320ms;
+
+  --sidebar-w: clamp(300px, 28vw, 380px);
+}
